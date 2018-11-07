@@ -223,7 +223,7 @@ function _getCacheFilename(url) {
   const ext = getExtFromQuery(url) || url.replace(/.+\./, '');
   const hash = SHA1(url);
 
-  return cacheDir + hash + ext ? `.${ext}`.toLowerCase() : '';
+  return `${cacheDir}${hash}${ext ? `.${ext}`.toLowerCase() : ''}`;
 }
 
 function getExtFromQuery(str) {
